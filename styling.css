@@ -16,16 +16,29 @@ html,body{
 }
 .out{
     display: grid;
+    grid-template-columns: repeat(2,1fr);
+
 }
 .grid{
-    width: 40%;
+    width: 90%;
     height: 100%;
     margin-top: 30px;
     border-radius: 20px;
     margin-left:5px;
-    transition: 0.1s ease-in-out
+    transition: 0.1s ease-in-out;
 }
 .grid:hover{
     border-left:5px solid white;
     border-bottom: 10px solid white;
+}
+
+.rotate{
+    transition: ease-in-out 1s;
+}
+.rotate:hover{
+    animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
 }
