@@ -7,20 +7,25 @@ html,body{
     background-color: rgb(0, 65, 131);
     width: 100%;
     margin-top: -15px;
-    border-radius: 25px;
+    border-radius: 20px;
 }
 .special-gothic-expanded-one-regular {
   font-family: "Special Gothic Expanded One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-.fade-text {
-  animation: fadeWords 6s infinite;
+.out{
+    display: grid;
 }
-@keyframes fadeWords {
-    0%   { opacity: 1; }
-    25%  { opacity: 0.05; }
-    50%  { opacity: 1; }
-    75%  { opacity: 0.05; }
-    100%  { opacity: 1; }
+.grid{
+    width: 40%;
+    height: 100%;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-left:5px;
+    transition: 0.1s ease-in-out
+}
+.grid:hover{
+    border-left:5px solid white;
+    border-bottom: 10px solid white;
 }
