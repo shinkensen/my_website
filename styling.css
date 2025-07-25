@@ -1,5 +1,4 @@
 html,body{
-    background-color: black;
     padding:0;
 }
 .nav{
@@ -70,5 +69,18 @@ html,body{
     padding-right: 5px
 }
 .logo{
-    
+    transition: 0.5s ease-in-out;
+}
+.logo:hover img{
+    transform: rotateZ(-5deg);
+}
+.logo img.cool{
+    transform: scale(1.1) ;
+    animation: move 2s;
+    transition: ease-in-out;
+}
+@keyframes move {
+    25% {transform: translate(0,-46px);}
+    75%{transform: translate(0,46px);}
+    100% {transform: translate(0,0px);;}
 }

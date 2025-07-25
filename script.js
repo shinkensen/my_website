@@ -192,3 +192,53 @@ if (i===2){
     i=0;
 }
 },500); // every 10 seconds
+function strt(data){
+    data.classList.add("cool");
+}
+function end(data){
+    setTimeout(()=>{
+        data.classList.remove("cool");
+    },2500);
+}
+let x=0,y=0,z=0;
+const body = document.getElementById("bdy");
+const red = document.getElementById("red");
+const green = document.getElementById("green");
+const rgb=document.getElementById("rgb");
+body.addEventListener("click",()=>{
+    if (x<255){
+    x+=15;
+    }
+    else{
+        x=0;
+    }
+
+    body.style.backgroundColor=`rgb(${y},${z},${x})`;
+    rgb.innerHTML=`(${y},${z},${x})`
+})
+red.addEventListener("click",()=>{
+    if (y<255){
+    y+=15;
+    x-=15;
+    }
+    else{
+        y=0;
+        x-=15;
+    }
+
+    body.style.backgroundColor=`rgb(${y},${z},${x})`;
+    rgb.innerHTML=`(${y},${z},${x})`
+})
+green.addEventListener("click",()=>{
+    if (z<255){
+    z+=15;
+    x-=15;
+    }
+    else{
+        z=0;
+        x-=15;
+    }
+
+    body.style.backgroundColor=`rgb(${y},${z},${x})`;
+    rgb.innerHTML=`(${y},${z},${x})`
+})
