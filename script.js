@@ -205,40 +205,8 @@ const body = document.getElementById("bdy");
 const red = document.getElementById("red");
 const green = document.getElementById("green");
 const rgb=document.getElementById("rgb");
-body.addEventListener("click",()=>{
-    if (x<255){
-    x+=15;
+document.addEventListener("keypress", function(event){
+    if (event.key==="r"){
+        location.reload();
     }
-    else{
-        x=0;
-    }
-
-    body.style.backgroundColor=`rgb(${y},${z},${x})`;
-    rgb.innerHTML=`(${y},${z},${x})`
-})
-red.addEventListener("click",()=>{
-    if (y<255){
-    y+=15;
-    x-=15;
-    }
-    else{
-        y=0;
-        x-=15;
-    }
-
-    body.style.backgroundColor=`rgb(${y},${z},${x})`;
-    rgb.innerHTML=`(${y},${z},${x})`
-})
-green.addEventListener("click",()=>{
-    if (z<255){
-    z+=15;
-    x-=15;
-    }
-    else{
-        z=0;
-        x-=15;
-    }
-
-    body.style.backgroundColor=`rgb(${y},${z},${x})`;
-    rgb.innerHTML=`(${y},${z},${x})`
 })
