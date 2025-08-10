@@ -210,3 +210,35 @@ document.addEventListener("keypress", function(event){
         location.reload();
     }
 })
+
+
+
+
+
+
+
+
+
+const colors = ["#E34C26", "#264DE4", "#F0DB4F","#3c873a","#4B8BBE","#f89820","#00599C","#314CB0","#1765F6","#f46602"];
+const logos = document.querySelectorAll('.fa-brands');
+
+logos.forEach((logo, i) => {
+    logo.id = `logo-${i}`;
+    const color = colors[i % colors.length];
+    logo.addEventListener('mouseenter', () => {
+        logo.style.color = color;
+        logo.style.borderColor = color;
+        logo.style.boxShadow= `0px 0px 50px 15px ${color}`;
+        if (logo.tagName==="svg"){
+            logo.querySelector(`path`).setAttribute('fill', color)
+        }
+    });
+
+    logo.addEventListener('mouseleave', () => {
+        logo.style.color = color;
+        logo.style.borderColor = color;
+        logo.style.boxShadow= "";
+    });
+});
+
+
