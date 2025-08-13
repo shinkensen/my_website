@@ -219,12 +219,13 @@ document.addEventListener("keypress", function(event){
 
 
 
-const colors = ["#E34C26", "#264DE4", "#F0DB4F","#3c873a","#4B8BBE","#f89820","#00599C","#314CB0","#1765F6","#f46602"];
+const colors = ["#E34C26", "#264DE4", "#F0DB4F","#3c873a","#4B8BBE","#f89820","#00599C","#314CB0","#1765F6","#f46602","#32B5F1","#b1428A"];
 const logos = document.querySelectorAll('.fa-brands');
-
+let scroll=0;
 logos.forEach((logo, i) => {
     logo.id = `logo-${i}`;
     const color = colors[i % colors.length];
+    logo.style.transform = `translate(${scroll/5})`
     logo.addEventListener('mouseenter', () => {
         logo.style.color = color;
         logo.style.borderColor = color;
@@ -240,5 +241,7 @@ logos.forEach((logo, i) => {
         logo.style.boxShadow= "";
     });
 });
-
-
+document.addEventListener('scroll', () =>{
+    scroll=window.scrollY || document.documentElement.scrollTop;
+    console.log(scroll)
+})
