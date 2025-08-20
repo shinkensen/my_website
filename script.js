@@ -225,7 +225,6 @@ let scroll=0;
 logos.forEach((logo, i) => {
     logo.id = `logo-${i}`;
     const color = colors[i % colors.length];
-    logo.style.transform = `translate(${scroll/5})`
     logo.addEventListener('mouseenter', () => {
         logo.style.color = color;
         logo.style.borderColor = color;
@@ -243,5 +242,22 @@ logos.forEach((logo, i) => {
 });
 document.addEventListener('scroll', () =>{
     scroll=window.scrollY || document.documentElement.scrollTop;
-    console.log(scroll)
+    console.log(scroll);
+    logos.forEach((logo) => {
+        const id=logo.id,len=id.length;
+        if (len===6&&parseInt(id.charAt(id.length - 1))<4){
+            let shift= scroll/ 1.09 -300;
+            if (shift >-4){
+                shift=-1;
+            }
+            logo.style.transform = `translateX(${shift}px)`;
+        }
+        else if (len===6&&parseInt(id.charAt(id.length - 1))<7){
+            let shift=-1*( scroll/ 1.09) +300;
+            if (shift <-0){
+                shift=-0;
+            }
+            logo.style.transform = `translateX(${shift}px)`;
+        }
+    });
 })
